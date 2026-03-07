@@ -7,3 +7,7 @@ authors: [ DerexXD ]
 description:
   Simple: Suite of simple commands to help modify the chunk you are currently standing in!
 website: https://github.com/DereC4
+commands:
+  chunk:
+    description: Suite of commands to modify the chunk you are standing in.
+    usage: /chunk <thing>

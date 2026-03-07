@@ -7,7 +7,7 @@ public final class ChunkModifierTools extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-
+        getCommand("chunk").setExecutor(new ChunkCommandManager());
     }
 
     @Override
