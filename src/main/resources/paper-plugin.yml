@@ -5,5 +5,5 @@ api-version: '1.18'
 prefix: DerexXD
 authors: [ DerexXD ]
 description:
-  Simple: Adds an animation while the night is skipped by players sleeping, making things really more immersive!
+  Simple: Suite of simple commands to help modify the chunk you are currently standing in!
 website: https://github.com/DereC4
