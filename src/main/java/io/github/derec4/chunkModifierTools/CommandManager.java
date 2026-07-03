@@ -24,7 +24,7 @@ public class CommandManager implements TabExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args.length == 0) {
-            sender.sendMessage("Usage: /chunk <forceload|inhabitedtime|coordinates>");
+            sender.sendMessage("Usage: /chunk <sub command>");
             return true;
         }
 
