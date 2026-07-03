@@ -1,6 +1,7 @@
 package io.github.derec4.chunkModifierTools;
 
 import io.github.derec4.chunkModifierTools.commands.CoordinatesCommand;
+import io.github.derec4.chunkModifierTools.commands.InhabitedTime.InhabitedTimeCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
@@ -31,6 +32,7 @@ public class CommandManager implements TabExecutor {
         CoordinatesCommand coordinatesCommand = new CoordinatesCommand();
         subCommands.put("xPos", coordinatesCommand);
         subCommands.put("zPos", coordinatesCommand);
+        subCommands.put("InhabitedTime", new InhabitedTimeCommand());
     }
 
     @Override
@@ -54,7 +56,7 @@ public class CommandManager implements TabExecutor {
                 break;
             }
             case "InhabitedTime": {
-                break;
+                return subCommands.get("InhabitedTime").execute(sender, args);
             }
             case "xPos": {
                 return subCommands.get("xPos").execute(sender, args);
@@ -86,6 +88,9 @@ public class CommandManager implements TabExecutor {
             return SUB_COMMANDS.stream()
                     .filter(sub -> sub.toLowerCase().startsWith(args[0].toLowerCase()))
                     .collect(Collectors.toList());
+        }
+        if (args.length >= 2 && args[0].equals("InhabitedTime")) {
+            return InhabitedTimeCommand.tabComplete(args);
         }
         return List.of();
     }
